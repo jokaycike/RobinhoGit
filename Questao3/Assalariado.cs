@@ -10,7 +10,7 @@ namespace Questao3
     {
         public double salario { get; set; }
 
-        public override double Vencimento()
+        public override double BuscarVencimento()
         {
             Console.WriteLine("Quanto você recebe no seu salario?");
             salario = double.Parse(Console.ReadLine());

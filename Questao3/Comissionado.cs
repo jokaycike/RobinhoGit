@@ -11,7 +11,7 @@ namespace Questao3
         public double totalVenda { get; set; }
         public double taxaComissao { get; set; }
 
-        public override double Vencimento()
+        public override double BuscarVencimento()
         {
             Console.WriteLine("Quanto em porcentagem que você ganha?");
             taxaComissao = double.Parse(Console.ReadLine());

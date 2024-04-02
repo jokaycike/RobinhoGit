@@ -13,9 +13,6 @@ namespace Questao3
         public string cpf { get; set; }
 
 
-        public virtual double Vencimento()
-        {
-            return 0;
-        }
+        public abstract double BuscarVencimento();
     }
 }

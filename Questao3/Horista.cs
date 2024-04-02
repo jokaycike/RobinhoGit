@@ -11,7 +11,7 @@ namespace Questao3
         public double precoHora { get; set; }
         public double horasTrabalhadas { get; set; }
 
-        public override double Vencimento()
+        public override double BuscarVencimento()
         {
             Console.WriteLine("Quanto você recebe por hora?");
             precoHora = double.Parse(Console.ReadLine());

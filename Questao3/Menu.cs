@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Questao3
 {
-    public class Menu : Empregado
+    public class Menu
     {
         public void Buscar()
         {
             Console.WriteLine("Digite seu nome:");
-            nome = Console.ReadLine();
+            string nome = Console.ReadLine();
 
             Console.WriteLine("Digite seu sobrenome:");
-            sobrenome = Console.ReadLine();
+            string sobrenome = Console.ReadLine();
 
             Console.WriteLine("Digite seu CPF");
-            cpf = Console.ReadLine();
+            string cpf = Console.ReadLine();
 
             Assalariado assalariado = new Assalariado();
             Comissionado comissionado = new Comissionado();
@@ -38,14 +38,20 @@ namespace Questao3
                 switch (opcao)
                 {
                     case "1":
-                        assalariado.Vencimento();
+                        assalariado.nome = nome;
+                        assalariado.sobrenome = sobrenome;
+                        assalariado.cpf = cpf;
+                        assalariado.BuscarVencimento();
                         Console.Write("Você ganha:");
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine(assalariado.salario.ToString("C"));
                         Console.ResetColor();
                         break;
                     case "2":
-                        double ganho = comissionado.Vencimento();
+                        comissionado.nome = nome;
+                        comissionado.sobrenome = sobrenome;
+                        comissionado.cpf = cpf;
+                        double ganho = comissionado.BuscarVencimento();
                         Console.Write("Você recebe a comissão de:");
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine(comissionado.taxaComissao + "%");
@@ -60,7 +66,10 @@ namespace Questao3
                         Console.ResetColor();
                         break;
                     case "3":
-                        double receber = horista.Vencimento();
+                        horista.nome = nome;
+                        horista.sobrenome = sobrenome;
+                        horista.cpf = cpf;
+                        double receber = horista.BuscarVencimento();
                         Console.Write("Você ganha por hora:");
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(horista.precoHora.ToString("C"));
